@@ -4091,6 +4091,19 @@
       }
     ]
   },
+  "dataguidance.com": {
+    "_name": "DataGuidance",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/search/news"
+        ],
+        "target": "/dataguidance/news"
+      }
+    ]
+  },
   "dayanzai.me": {
     "_name": "大眼仔旭",
     ".": [
@@ -6664,6 +6677,30 @@
           "/fgw_fzggdt/index.html"
         ],
         "target": "/gov/sh/fgw/fgw_fzggdt"
+      },
+      {
+        "title": "上海市发展和改革委员会",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/:category"
+        ],
+        "target": "/govparams=>{const category=params.category.replace(/\\/index\\.html/,\"\");return`/gov/sh/fgw${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "最新信息公开",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/fgw_zxxxgk/index.html"
+        ],
+        "target": "/gov/sh/fgw/fgw_zxxxgk"
+      },
+      {
+        "title": "要闻动态",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/fgw_fzggdt/index.html"
+        ],
+        "target": "/gov/sh/fgw/fgw_fzggdt"
       }
     ],
     "rsj": [
@@ -6674,9 +6711,25 @@
           "/"
         ],
         "target": "/gov/sh/rsj/ksxm"
+      },
+      {
+        "title": "上海市职业能力考试院 考试项目",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/"
+        ],
+        "target": "/gov/shanghai/rsj/ksxm"
       }
     ],
     "wsbs.wgj": [
+      {
+        "title": "上海市文旅局审批公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/"
+        ],
+        "target": "/gov/sh/wgj"
+      },
       {
         "title": "上海市文旅局审批公告",
         "docs": "https://docs.rsshub.app/routes/government",
@@ -6694,6 +6747,14 @@
           "/"
         ],
         "target": "/gov/sh/wsjkw/yqtb"
+      },
+      {
+        "title": "上海卫健委 疫情通报",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/"
+        ],
+        "target": "/gov/shanghai/wsjkw/yqtb"
       }
     ]
   },
@@ -8675,6 +8736,14 @@
           "/"
         ],
         "target": "/javdb/tags/:query?/:category?"
+      },
+      {
+        "title": "番号",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/"
+        ],
+        "target": "/javdb/video_codes/:code/:filter?"
       }
     ]
   },
@@ -11526,6 +11595,19 @@
           "/"
         ],
         "target": "/nowcoder/schedule"
+      }
+    ]
+  },
+  "npmjs.com": {
+    "_name": "NPM",
+    "www": [
+      {
+        "title": "Package",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/package/:name"
+        ],
+        "target": "/npm/package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}"
       }
     ]
   },

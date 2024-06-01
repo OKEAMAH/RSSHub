@@ -14813,6 +14813,32 @@
       "other"
     ]
   },
+  "dataguidance": {
+    "routes": {
+      "/news": {
+        "name": "News",
+        "example": "/dataguidance/news",
+        "path": "/news",
+        "radar": [
+          {
+            "source": [
+              "dataguidance.com/search/news"
+            ]
+          }
+        ],
+        "maintainers": [
+          "harveyqiu"
+        ],
+        "url": "dataguidance.com/news",
+        "location": "index.ts"
+      }
+    },
+    "name": "DataGuidance",
+    "url": "dataguidance.com",
+    "categories": [
+      "other"
+    ]
+  },
   "dayanzai": {
     "routes": {
       "/:category/:fulltext?": {
@@ -24636,7 +24662,60 @@
         "location": "sdb/sdb.ts"
       },
       "/sh/fgw/:category{.+}?": {
-        "path": "/sh/fgw/:category{.+}?",
+        "path": [
+          "/sh/fgw/:category{.+}?",
+          "/shanghai/fgw/:category{.+}?"
+        ],
+        "name": "上海市发展和改革委员会",
+        "url": "fgw.sh.gov.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/gov/sh/fgw/fgw_zxxxgk",
+        "parameters": {
+          "category": "分类，默认为 `fgw_zxxxgk`，即最新信息公开，可在对应分类页 URL 中找到"
+        },
+        "description": ":::tip\n  若订阅 [最新信息公开](https://fgw.sh.gov.cn/fgw_zxxxgk/index.html)，网址为 `https://fgw.sh.gov.cn/fgw_zxxxgk/index.html`。截取 `https://fgw.sh.gov.cn/` 到末尾 `/index.html` 的部分 `fgw_zxxxgk` 作为参数填入，此时路由为 [`/gov/sh/fgw/fgw_zxxxgk`](https://rsshub.app/gov/sh/fgw/fgw_zxxxgk)。\n  :::\n\n  | 最新信息公开 | 要闻动态   |\n  | ------------ | ---------- |\n  | fgw_zxxxgk   | fgw_fzggdt |\n  ",
+        "categories": [
+          "government"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "fgw.sh.gov.cn/:category"
+            ]
+          },
+          {
+            "title": "最新信息公开",
+            "source": [
+              "fgw.sh.gov.cn/fgw_zxxxgk/index.html"
+            ],
+            "target": "/sh/fgw/fgw_zxxxgk"
+          },
+          {
+            "title": "要闻动态",
+            "source": [
+              "fgw.sh.gov.cn/fgw_fzggdt/index.html"
+            ],
+            "target": "/sh/fgw/fgw_fzggdt"
+          }
+        ],
+        "location": "sh/fgw/index.ts"
+      },
+      "/shanghai/fgw/:category{.+}?": {
+        "path": [
+          "/sh/fgw/:category{.+}?",
+          "/shanghai/fgw/:category{.+}?"
+        ],
         "name": "上海市发展和改革委员会",
         "url": "fgw.sh.gov.cn",
         "maintainers": [
@@ -24683,7 +24762,42 @@
         "location": "sh/fgw/index.ts"
       },
       "/sh/rsj/ksxm": {
-        "path": "/sh/rsj/ksxm",
+        "path": [
+          "/sh/rsj/ksxm",
+          "/shanghai/rsj/ksxm"
+        ],
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/sh/rsj/ksxm",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "rsj.sh.gov.cn/"
+            ]
+          }
+        ],
+        "name": "上海市职业能力考试院 考试项目",
+        "maintainers": [
+          "Fatpandac"
+        ],
+        "url": "rsj.sh.gov.cn/",
+        "location": "sh/rsj/ksxm.ts"
+      },
+      "/shanghai/rsj/ksxm": {
+        "path": [
+          "/sh/rsj/ksxm",
+          "/shanghai/rsj/ksxm"
+        ],
         "categories": [
           "government"
         ],
@@ -24712,7 +24826,45 @@
         "location": "sh/rsj/ksxm.ts"
       },
       "/sh/wgj/:page?": {
-        "path": "/sh/wgj/:page?",
+        "path": [
+          "/sh/wgj/:page?",
+          "/shanghai/wgj/:page?"
+        ],
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/sh/wgj",
+        "parameters": {
+          "page": "页数，默认第 1 页"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "wsbs.wgj.sh.gov.cn/"
+            ],
+            "target": "/sh/wgj"
+          }
+        ],
+        "name": "上海市文旅局审批公告",
+        "maintainers": [
+          "gideonsenku"
+        ],
+        "url": "wsbs.wgj.sh.gov.cn/",
+        "location": "sh/wgj/wgj.ts"
+      },
+      "/shanghai/wgj/:page?": {
+        "path": [
+          "/sh/wgj/:page?",
+          "/shanghai/wgj/:page?"
+        ],
         "categories": [
           "government"
         ],
@@ -24744,7 +24896,42 @@
         "location": "sh/wgj/wgj.ts"
       },
       "/sh/wsjkw/yqtb": {
-        "path": "/sh/wsjkw/yqtb",
+        "path": [
+          "/sh/wsjkw/yqtb",
+          "/shanghai/wsjkw/yqtb"
+        ],
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/sh/wsjkw/yqtb",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "wsjkw.sh.gov.cn/"
+            ]
+          }
+        ],
+        "name": "上海卫健委 疫情通报",
+        "maintainers": [
+          "zcf0508"
+        ],
+        "url": "wsjkw.sh.gov.cn/",
+        "location": "sh/wsjkw/yqtb/index.ts"
+      },
+      "/shanghai/wsjkw/yqtb": {
+        "path": [
+          "/sh/wsjkw/yqtb",
+          "/shanghai/wsjkw/yqtb"
+        ],
         "categories": [
           "government"
         ],
@@ -24773,7 +24960,19 @@
         "location": "sh/wsjkw/yqtb/index.ts"
       },
       "/sh/yjj/*": {
-        "path": "/sh/yjj/*",
+        "path": [
+          "/sh/yjj/*",
+          "/shanghai/yjj/*"
+        ],
+        "name": "Unknown",
+        "maintainers": [],
+        "location": "sh/yjj/index.ts"
+      },
+      "/shanghai/yjj/*": {
+        "path": [
+          "/sh/yjj/*",
+          "/shanghai/yjj/*"
+        ],
         "name": "Unknown",
         "maintainers": [],
         "location": "sh/yjj/index.ts"
@@ -31615,6 +31814,46 @@
         "url": "javdb.com/",
         "description": ":::tip\n  在 [分類](https://javdb.com/tags) 中选定分类后，URL 中 `tags?` 后的字段即为筛选参数。\n\n  如 `https://javdb.com/tags?c2=5&c10=1` 中 `c2=5&c10=1` 为筛选参数。\n  :::\n\n  分类\n\n  | 有碼     | 無碼       | 歐美    |\n  | -------- | ---------- | ------- |\n  | censored | uncensored | western |",
         "location": "tags.ts"
+      },
+      "/video_codes/:code/:filter?": {
+        "path": "/video_codes/:code/:filter?",
+        "categories": [
+          "multimedia"
+        ],
+        "example": "/javdb/video_codes/SIVR",
+        "parameters": {
+          "id": "番号前缀",
+          "filter": "过滤，见下表，默认为 `全部`"
+        },
+        "features": {
+          "requireConfig": [
+            {
+              "name": "JAVDB_SESSION",
+              "description": "JavDB登陆后的session值，可在控制台的cookie下查找 `_jdb_session` 的值，即可获取",
+              "optional": true
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "javdb.com/"
+            ],
+            "target": ""
+          }
+        ],
+        "name": "番号",
+        "maintainers": [
+          "sgpublic"
+        ],
+        "url": "javdb.com/",
+        "description": "| 全部 | 可播放   | 單體作品 | 可下載   | 字幕  | 預覽圖  |\n  | ---- | -------- | -------- | -------- | ----- | ------- |\n  |      | playable | single   | download | cnsub | preview |",
+        "location": "videocodes.ts"
       }
     },
     "name": "JavDB",
@@ -41576,10 +41815,23 @@
   },
   "npm": {
     "routes": {
-      "package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}": {
-        "path": "package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}",
-        "name": "Unknown",
-        "maintainers": [],
+      "/package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}": {
+        "path": "/package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}",
+        "name": "Package",
+        "maintainers": [
+          "Fatpandac"
+        ],
+        "categories": [
+          "program-update"
+        ],
+        "example": "/npm/package/rsshub",
+        "radar": [
+          {
+            "source": [
+              "www.npmjs.com/package/:name"
+            ]
+          }
+        ],
         "location": "package.ts"
       }
     },

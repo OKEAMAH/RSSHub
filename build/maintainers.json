@@ -1431,6 +1431,9 @@
     "zoenglinghou",
     "nczitzk"
   ],
+  "/dataguidance/news": [
+    "harveyqiu"
+  ],
   "/dayanzai/:category/:fulltext?": [],
   "/dbaplus/": [
     "cnkmmk"
@@ -2447,16 +2450,29 @@
   "/gov/sh/fgw/:category{.+}?": [
     "nczitzk"
   ],
+  "/gov/shanghai/fgw/:category{.+}?": [
+    "nczitzk"
+  ],
   "/gov/sh/rsj/ksxm": [
+    "Fatpandac"
+  ],
+  "/gov/shanghai/rsj/ksxm": [
     "Fatpandac"
   ],
   "/gov/sh/wgj/:page?": [
     "gideonsenku"
   ],
+  "/gov/shanghai/wgj/:page?": [
+    "gideonsenku"
+  ],
   "/gov/sh/wsjkw/yqtb": [
     "zcf0508"
   ],
+  "/gov/shanghai/wsjkw/yqtb": [
+    "zcf0508"
+  ],
   "/gov/sh/yjj/*": [],
+  "/gov/shanghai/yjj/*": [],
   "/gov/shaanxi/kjt/:id?": [
     "nczitzk"
   ],
@@ -3150,6 +3166,9 @@
   ],
   "/javdb/tags/:query?/:category?": [
     "nczitzk"
+  ],
+  "/javdb/video_codes/:code/:filter?": [
+    "sgpublic"
   ],
   "/javlibrary/videos/bestrated/:language?/:mode?": [],
   "/javlibrary/bestrated/:language?/:mode?": [],
@@ -4129,7 +4148,9 @@
   "/nowcoder/schedule/:propertyId?/:typeId?": [
     "junfengP"
   ],
-  "/npmpackage/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}": [],
+  "/npm/package/:name{(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*}": [
+    "Fatpandac"
+  ],
   "/npr/:endpoint?": [
     "bennyyip"
   ],
