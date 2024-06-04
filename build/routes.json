@@ -8968,18 +8968,18 @@
         "maintainers": [
           "FranklinYu"
         ],
-        "example": "/bug/webkit/251528",
+        "example": "/bugzilla/bug/webkit/251528",
         "parameters": {
           "site": "site identifier",
           "bugId": "numeric identifier of the bug in the site"
         },
-        "description": "Supported site identifiers: [`apache`](https://bz.apache.org/bugzilla), [`apache.ooo`](https://bz.apache.org/ooo), [`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin), [`mozilla`](https://bugzilla.mozilla.org), [`webkit`](https://bugs.webkit.org).",
+        "description": "Supported site identifiers: [`apache`](https://bz.apache.org/bugzilla), [`apache.ooo`](https://bz.apache.org/ooo), [`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin), [`kernel`](https://bugzilla.kernel.org), [`mozilla`](https://bugzilla.mozilla.org), [`webkit`](https://bugs.webkit.org).",
         "categories": [
           "programming"
         ],
         "zh": {
           "name": "bugs",
-          "description": "支持的站点标识符：[`apache`](https://bz.apache.org/bugzilla)、[`apache.ooo`](https://bz.apache.org/ooo)、[`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin)、[`mozilla`](https://bugzilla.mozilla.org)、[`webkit`](https://bugs.webkit.org)。"
+          "description": "支持的站点标识符：[`apache`](https://bz.apache.org/bugzilla)、[`apache.ooo`](https://bz.apache.org/ooo)、[`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin)、[`kernel`](https://bugzilla.kernel.org)、[`mozilla`](https://bugzilla.mozilla.org)、[`webkit`](https://bugs.webkit.org)。"
         },
         "location": "bug.ts"
       }
@@ -36219,7 +36219,7 @@
         "location": "index.ts"
       }
     },
-    "name": "Unknown",
+    "name": "MangaDex",
     "url": "mangadex.org"
   },
   "manhuagui": {
@@ -36332,6 +36332,35 @@
     },
     "name": "看漫画",
     "url": "www.manhuagui.com"
+  },
+  "manyvids": {
+    "routes": {
+      "/profile/vids/:uid": {
+        "path": "/profile/vids/:uid",
+        "radar": [
+          {
+            "source": [
+              "www.manyvids.com/Profile/:uid/:handle/Store/*",
+              "www.manyvids.com/Profile/:uid/:handle/Store"
+            ]
+          }
+        ],
+        "parameters": {
+          "uid": "User ID, can be found in the URL."
+        },
+        "name": "Creator Videos",
+        "example": "/manyvids/profile/vids/1001213004",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "video.ts"
+      }
+    },
+    "name": "ManyVids",
+    "url": "www.manyvids.com",
+    "categories": [
+      "multimedia"
+    ]
   },
   "mastodon": {
     "routes": {
@@ -54069,6 +54098,39 @@
         "url": "sspai.com/matrix",
         "location": "matrix.ts"
       },
+      "/prime/community": {
+        "path": "/prime/community",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/sspai/prime/community",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "SSPAI_BEARERTOKEN",
+              "optional": false,
+              "description": "少数派会员账号认证 token。获取方式：登陆后打开少数派会员社区界面，打开浏览器开发者工具中 “网络”(Network) 选项卡，筛选 URL 找到任一个地址为 `sspai.com/api` 开头的请求，点击检查其 “消息头”，在 “请求头” 中找到Authorization字段，将其值复制填入配置即可。你的配置应该形如 `SSPAI_BEARERTOKEN: 'Bearer eyJxxxx......xx_U8'`。"
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "sspai.com/community"
+            ]
+          }
+        ],
+        "name": "会员社区",
+        "maintainers": [
+          "mintyfrankie"
+        ],
+        "location": "prime-community.ts"
+      },
       "/series/:id": {
         "path": "/series/:id",
         "categories": [
@@ -62390,7 +62452,8 @@
           {
             "source": [
               "m.weibo.cn/u/:uid",
-              "m.weibo.cn/profile/:uid"
+              "m.weibo.cn/profile/:uid",
+              "www.weibo.com/u/:uid"
             ],
             "target": "/user/:uid"
           }

@@ -9921,7 +9921,7 @@
     ]
   },
   "mangadex.org": {
-    "_name": "Unknown",
+    "_name": "MangaDex",
     ".": [
       {
         "title": "Unknown",
@@ -9960,6 +9960,20 @@
           "/user/book/shelf"
         ],
         "target": "/manhuagui/subscribe"
+      }
+    ]
+  },
+  "manyvids.com": {
+    "_name": "ManyVids",
+    "www": [
+      {
+        "title": "Creator Videos",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/Profile/:uid/:handle/Store/*",
+          "/Profile/:uid/:handle/Store"
+        ],
+        "target": "/manyvids/profile/vids/:uid"
       }
     ]
   },
@@ -15119,6 +15133,14 @@
         "target": "/sspai/matrix"
       },
       {
+        "title": "会员社区",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/community"
+        ],
+        "target": "/sspai/prime/community"
+      },
+      {
         "title": "付费专栏文章更新",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
@@ -17346,7 +17368,8 @@
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
           "/u/:uid",
-          "/profile/:uid"
+          "/profile/:uid",
+          "/u/:uid"
         ],
         "target": "/weibo/user/:uid"
       },
