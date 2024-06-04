@@ -256,6 +256,9 @@
   "/abskoop/nsfw": [
     "zhenhappy"
   ],
+  "/academia/topic/:interest": [
+    "K33k0"
+  ],
   "/accessbriefing/:category{.+}?": [
     "nczitzk"
   ],
@@ -870,6 +873,9 @@
   ],
   "/buaa/news/:type": [
     "AlanDecode"
+  ],
+  "/bugzilla/bug/:site/:bugId": [
+    "FranklinYu"
   ],
   "/bulianglin/": [
     "cnkmmk"
@@ -4631,6 +4637,12 @@
   "/ps/trophy/:id": [
     "DIYgod"
   ],
+  "/psyche/topic/:topic": [
+    "emdoe"
+  ],
+  "/psyche/type/:type": [
+    "emdoe"
+  ],
   "/pts/curations": [
     "nczitzk"
   ],
@@ -4641,6 +4653,9 @@
   ],
   "/pubmed/trending/:filters?": [
     "nczitzk"
+  ],
+  "/pubscholar/explore/:category?/:keyword?": [
+    "TonyRL"
   ],
   "/pumc/mdadmission": [
     "nczitzk"
@@ -5431,6 +5446,9 @@
     "nczitzk"
   ],
   "/surfshark/blog/:category{.+}?": [],
+  "/sustainabilitymag/articles": [
+    "mintyfrankie"
+  ],
   "/sustech/bidding": [
     "sparkcyf"
   ],

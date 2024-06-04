@@ -2708,6 +2708,36 @@
     "name": "A 姐分享",
     "url": "nsfw.abskoop.com"
   },
+  "academia": {
+    "routes": {
+      "/topic/:interest": {
+        "path": "/topic/:interest",
+        "example": "/academia/topic/Urban_History",
+        "parameters": {
+          "interest": "interest"
+        },
+        "radar": [
+          {
+            "source": [
+              "academia.edu/Documents/in/:interest"
+            ],
+            "target": "/topic/:interest"
+          }
+        ],
+        "name": "interest",
+        "maintainers": [
+          "K33k0"
+        ],
+        "categories": [
+          "journal"
+        ],
+        "url": "academia.edu",
+        "location": "topics.ts"
+      }
+    },
+    "name": "Academia",
+    "url": "https://www.academia.edu/"
+  },
   "accessbriefing": {
     "routes": {
       "/:category{.+}?": {
@@ -8929,6 +8959,38 @@
     },
     "name": "北京航空航天大学",
     "url": "news.buaa.edu.cn"
+  },
+  "bugzilla": {
+    "routes": {
+      "/bug/:site/:bugId": {
+        "path": "/bug/:site/:bugId",
+        "name": "bugs",
+        "maintainers": [
+          "FranklinYu"
+        ],
+        "example": "/bug/webkit/251528",
+        "parameters": {
+          "site": "site identifier",
+          "bugId": "numeric identifier of the bug in the site"
+        },
+        "description": "Supported site identifiers: [`apache`](https://bz.apache.org/bugzilla), [`apache.ooo`](https://bz.apache.org/ooo), [`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin), [`mozilla`](https://bugzilla.mozilla.org), [`webkit`](https://bugs.webkit.org).",
+        "categories": [
+          "programming"
+        ],
+        "zh": {
+          "name": "bugs",
+          "description": "支持的站点标识符：[`apache`](https://bz.apache.org/bugzilla)、[`apache.ooo`](https://bz.apache.org/ooo)、[`apache.SpamAssassin`](https://bz.apache.org/SpamAssassin)、[`mozilla`](https://bugzilla.mozilla.org)、[`webkit`](https://bugs.webkit.org)。"
+        },
+        "location": "bug.ts"
+      }
+    },
+    "name": "Bugzilla",
+    "url": "bugzilla.org",
+    "description": "Bugzilla instances hosted by organizations.",
+    "zh": {
+      "name": "Bugzilla",
+      "description": "各组织自建的Bugzilla实例。"
+    }
   },
   "bulianglin": {
     "routes": {
@@ -46525,6 +46587,66 @@
     "name": "PlayStation Store",
     "url": "www.playstation.com"
   },
+  "psyche": {
+    "routes": {
+      "/topic/:topic": {
+        "path": "/topic/:topic",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/psyche/topic/therapeia",
+        "parameters": {
+          "topic": "Topic"
+        },
+        "radar": [
+          {
+            "source": [
+              "psyche.co/:topic"
+            ]
+          }
+        ],
+        "name": "Topics",
+        "maintainers": [
+          "emdoe"
+        ],
+        "description": "Supported categories: Therapeia, Eudaimonia, and Poiesis.",
+        "location": "topic.ts"
+      },
+      "/type/:type": {
+        "path": "/type/:type",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/psyche/type/ideas",
+        "parameters": {
+          "type": "Type"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "psyche.co/:type"
+            ]
+          }
+        ],
+        "name": "Types",
+        "maintainers": [
+          "emdoe"
+        ],
+        "description": "Supported types: Ideas, Guides, and Films.",
+        "location": "type.ts"
+      }
+    },
+    "name": "Psyche",
+    "url": "psyche.co"
+  },
   "pts": {
     "routes": {
       "/curations": {
@@ -46639,6 +46761,29 @@
     },
     "name": "PubMed",
     "url": "pubmed.ncbi.nlm.nih.gov"
+  },
+  "pubscholar": {
+    "routes": {
+      "/explore/:category?/:keyword?": {
+        "path": "/explore/:category?/:keyword?",
+        "name": "Explore",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "example": "/pubscholar/explore",
+        "parameters": {
+          "category": "Category, see the table below, `articles` by default",
+          "keyword": "Search Keyword"
+        },
+        "description": "| Articles / 论文 | Patents / 专利 | Reports / 领域快报 | Information / 动态快讯 | Datasets / 科学数据 | Books / 图书 |\n| --------------- | -------------- | ------------------ | ---------------------- | ------------------- | ------------ |\n| articles        | patents        | bulletins          | reports                | sciencedata         | books        |",
+        "location": "explore.ts"
+      }
+    },
+    "name": "PubScholar 公益学术平台",
+    "url": "pubscholar.cn",
+    "categories": [
+      "journal"
+    ]
   },
   "pumc": {
     "routes": {
@@ -54719,6 +54864,41 @@
     },
     "name": "Surfshark",
     "url": "surfshark.com"
+  },
+  "sustainabilitymag": {
+    "routes": {
+      "/articles": {
+        "path": "/articles",
+        "name": "Articles",
+        "url": "sustainabilitymag.com/articles",
+        "maintainers": [
+          "mintyfrankie"
+        ],
+        "categories": [
+          "other"
+        ],
+        "example": "/sustainabilitymag/articles",
+        "radar": [
+          {
+            "source": [
+              "https://sustainabilitymag.com/articles"
+            ],
+            "target": "/sustainabilitymag/articles"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "location": "articles.ts"
+      }
+    },
+    "name": "Sustainability Magazine",
+    "url": "https://sustainabilitymag.com"
   },
   "sustech": {
     "routes": {
