@@ -14903,6 +14903,36 @@
     "name": "大麦网",
     "url": "search.damai.cn"
   },
+  "dangdang": {
+    "routes": {
+      "/notice/:type?": {
+        "path": "/notice/:type?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/dangdang/notice/1",
+        "parameters": {
+          "type": "公告分类，默认为全部"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "公告",
+        "maintainers": [
+          "353325487"
+        ],
+        "description": "| 类型     | type |\n  | -------- | ---- |\n  | 全部      | 0    |\n  | 其他      | 1    |\n  | 规则变更   | 2    |",
+        "location": "notice.ts"
+      }
+    },
+    "name": "当当开放平台",
+    "url": "open.dangdang.com"
+  },
   "dapenti": {
     "routes": {
       "/subject/:id": {
@@ -54750,6 +54780,32 @@
           "moppman"
         ],
         "location": "search.ts"
+      },
+      "/sharefile-changelog/:sharefileID/:routeParams?": {
+        "path": "/sharefile-changelog/:sharefileID/:routeParams?",
+        "categories": [
+          "game"
+        ],
+        "example": "/steam/sharefile-changelog/2851063440/l=schinese",
+        "parameters": {
+          "sharefileID": "Steam community sharefile id. Usually refers to a workshop item.",
+          "routeParams": "Route parameters."
+        },
+        "radar": [
+          {
+            "title": "Sharefile Changelog",
+            "source": [
+              "steamcommunity.com/sharedfiles/filedetails/changelog/:sharefileID"
+            ],
+            "target": "/sharefile-changelog/:sharefileID"
+          }
+        ],
+        "description": "Steam Community Sharefile's Changelog. Primary used for a workshop item.\nHelpful route parameters:\n- `l=` language parameter, change the language of description.\n- `p=` page parameter, change the results page. p=1 by default.\n",
+        "name": "Sharefile Changelog",
+        "maintainers": [
+          "NyaaaDoge"
+        ],
+        "location": "sharefile-changelog.ts"
       },
       "/workshopsearch/:appid?/:routeParams?": {
         "path": "/workshopsearch/:appid?/:routeParams?",
