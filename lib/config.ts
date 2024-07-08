@@ -258,12 +258,13 @@ export type Config = {
     tophub: {
         cookie?: string;
     };
+    tsdm39: {
+        cookie: string;
+    };
     twitter: {
-        oauthTokens?: string[];
-        oauthTokenSecrets?: string[];
-        username?: string;
-        password?: string;
-        authenticationSecret?: string;
+        username?: string[];
+        password?: string[];
+        authenticationSecret?: string[];
         cookie?: string;
         authToken?: string[];
     };
@@ -285,6 +286,9 @@ export type Config = {
     };
     ximalaya: {
         token?: string;
+    };
+    xsijishe: {
+        cookie?: string;
     };
     xueqiu: {
         cookies?: string;
@@ -621,12 +625,13 @@ const calculateValue = () => {
         tophub: {
             cookie: envs.TOPHUB_COOKIE,
         },
+        tsdm39: {
+            cookie: envs.TSDM39_COOKIES,
+        },
         twitter: {
-            oauthTokens: envs.TWITTER_OAUTH_TOKEN?.split(','),
-            oauthTokenSecrets: envs.TWITTER_OAUTH_TOKEN_SECRET?.split(','),
-            username: envs.TWITTER_USERNAME,
-            password: envs.TWITTER_PASSWORD,
-            authenticationSecret: envs.TWITTER_AUTHENTICATION_SECRET,
+            username: envs.TWITTER_USERNAME?.split(','),
+            password: envs.TWITTER_PASSWORD?.split(','),
+            authenticationSecret: envs.TWITTER_AUTHENTICATION_SECRET?.split(','),
             cookie: envs.TWITTER_COOKIE,
             authToken: envs.TWITTER_AUTH_TOKEN?.split(','),
         },
@@ -648,6 +653,9 @@ const calculateValue = () => {
         },
         ximalaya: {
             token: envs.XIMALAYA_TOKEN,
+        },
+        xsijishe: {
+            cookie: envs.XSIJISHE_COOKIE,
         },
         xueqiu: {
             cookies: envs.XUEQIU_COOKIES,
